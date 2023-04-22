@@ -1,0 +1,48 @@
+class MyQueue {
+    int arr[2000];
+    int f=0,r=0;
+public:
+    MyQueue() {
+        
+    }
+    
+    void push(int x) {
+        if(full()){
+            return;
+        }
+        arr[r]=x;
+        r+=1;
+        
+    }
+    
+    int pop() {
+        if(empty()){
+            return 0;
+        }
+        int ans=arr[f];
+        f+=1;
+        return ans;
+        
+    }
+    
+    int peek() {
+        
+        return arr[f];
+    }
+    bool full(){
+        if(f==2000){
+            return true;
+        }
+        return false;
+    }
+    
+    bool empty() {
+        if(f==r){
+            f=0;
+            r=0;
+            return true;
+        }
+        return false;
+        
+    }
+};
